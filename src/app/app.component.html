@@ -1,0 +1,20 @@
+<div>
+   <h1>Login Form</h1>
+  <form [formGroup]="formdata" (ngSubmit) = "onClickSubmit(formdata.value)" >
+     Email ID: <input type="text" class="fortextbox" name="emailid" placeholder="emailid" 
+        formControlName="emailid">
+     <br/><br>
+     
+     Password: <input type="password" class="fortextbox" name="passwd" 
+        placeholder="passwd" formControlName="passwd">
+     <br/><br>
+
+     Salary: <input appNumberFormat type="text" negative="1" decimals="0" placeholder="salary" formControlName="salary">
+      <br><br>
+     
+     <input type="submit" [disabled] ="!formdata.valid" class="forsubmit" value="Log In">
+  </form>
+</div>
+<p>
+  Email entered is : {{emailid}}
+</p>
